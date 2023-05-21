@@ -1,0 +1,44 @@
+<div style="width: 100%;margin-top: 30px;">
+  <div style="float: left;width: 50%;">
+    <img src="assets/login-page-5000918-4165667.webp" style="width: 300px;margin-left: 300px;">
+  </div>
+  <div style="float: right; width: 50%;">
+    <div>
+      <div class="card"
+        style="margin-top: 20px;padding: 20px;margin-left: 30px;box-shadow: dimgray;margin-right: 20px;width: 80%;margin: auto;">
+        <div style="margin-bottom: 20px;" style="box-shadow:lightblue;">
+          <h2>SingIn</h2>
+        </div>
+        <form [formGroup]="loginform">
+          <div class="mb-3">
+            <span *ngIf="email?.touched && email?.invalid">*please enter yor valide email address</span>
+            <label name="email" for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input [(ngModel)]="userDetail.email" name="email" type="email" class="form-control"
+              id="exampleFormControlInput1" placeholder="Mail" formControlName="email" required>
+
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Password</label>
+            <span *ngIf="password?.touched && password?.invalid">*Please enter Password</span>
+            <input [(ngModel)]="userDetail.password" name="password" type="password" class="form-control"
+              id="exampleFormControlInput1" placeholder="enter password" formControlName="password" required>
+
+          </div>
+          <div>
+            <button type="button" [disabled]="loginform.invalid" (click)="login()"
+              style="background-color: green;width: 100%;color: white;">Sing-in
+            </button>
+          </div>
+        </form>
+        <div>if you new account
+          <a class="icon-link" href="registration">
+            Registration Now
+            <svg class="bi" aria-hidden="true">
+              <use xlink:href="#arrow-right"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

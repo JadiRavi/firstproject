@@ -1,0 +1,8 @@
+.componentStyle{
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    }
+    .ng-touched.ng-invalid{
+        border: 1px solid red !important;
+    }

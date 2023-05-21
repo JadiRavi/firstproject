@@ -1,0 +1,26 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+/* .btnnn {
+    /* background-color: #4CAF50;
+    border: none;
+    color: #FFFFFF;
+    padding: 10px 15px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    margin: 16px 0 !important;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+} */

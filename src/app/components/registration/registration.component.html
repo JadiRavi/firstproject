@@ -1,0 +1,58 @@
+<div style="width: 100%;">
+     <div style="float: left;width: 50%;">
+          <img src="assets/registration.img.jpg" style="width: 700px;height: 300px;margin-top: 30px;">
+     </div>
+     <div style="float: right;width: 50%;">
+          <div class="card componentStyle" style="padding: 20px;margin-left:50px;margin-top: 10px;">
+               <div style="margin-bottom: 20px;">
+                    <b> Sing Up</b>
+               </div>
+               <form [formGroup]="singupform" class="form-signin">
+                    <div class="mb-3">
+                         <span *ngIf="email?.touched && email?.invalid"> * please enter valide Email</span>
+                         <input [(ngModel)]="user.email" type="email" name="email" placeholder="Email Address"
+                              class="form-control" formControlName="email">
+                    </div>
+                    <div class="mb-3">
+                         <span *ngIf="firatName?.touched && firatName?.invalid">* please enter firatName</span>
+                         <input type="text" [(ngModel)]="user.firstName" name="firatName" placeholder="first Name"
+                              class="form-control" formControlName="firatName">
+                    </div>
+                    <div class="mb-3">
+                         <span *ngIf="lastName?.touched && lastName?.invalid">* please enter last Name</span>
+                         <input type="text" [(ngModel)]="user.lastName" name="lastName" placeholder="Last Name"
+                              class="form-control" formControlName="lastName">
+                    </div>
+                    <div class="mb-3">
+                         <span *ngIf="displayName?.touched && displayName?.invalid">* enter Display Name</span>
+                         <input type="text" [(ngModel)]="user.displayName" name="displayName" placeholder="Display Name"
+                              class="form-control" formControlName="displayName">
+                    </div>
+                    <div class="mb-3">
+                         <span *ngIf="password?.touched && password?.invalid">* please enter valide passward</span>
+                         <input type="password" [(ngModel)]="user.password" name="password" placeholder="password"
+                              class="form-control" formControlName="password">
+                    </div>
+                    <div class="mb-3">
+                         <span *ngIf="confirmpassword?.touched && confirmpassword?.invalid">* please enter valide
+                              passward confirmpassword</span>
+                         <input type="password" [(ngModel)]="user.password" name="confirmpassword"
+                              placeholder="Confirm password" class="form-control" formControlName="password"
+                              view="passward">
+                    </div>
+                    <div>
+                         <button (click)="register()" style="background-color: green;width: 100%;color: white;"
+                              type="submit"> Sing up</button>
+                    </div>
+                    <div>
+                         if you have a account please <a class="icon-link icon-link-hover" href="login">
+                              Login Now
+                              <svg class="bi" aria-hidden="true">
+                                   <use xlink:href="#arrow-right"></use>
+                              </svg>
+                         </a>
+                    </div>
+               </form>
+          </div>
+     </div>
+</div>

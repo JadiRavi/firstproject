@@ -1,0 +1,67 @@
+<div class="card componentStyle">
+    <div>
+        <div class="col-md-12">
+            <div style="text-align: right;margin-right: 1rem !important; " class="mb-3 mt-3">
+                <button (click)=" addCategory()" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#categoryModal">New Category</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card" style="margin-left: 10px;margin-right: 10px;margin-bottom: 10px;">
+        <table>
+            <tr style="margin-left: 5px;">
+                <th style="margin-left: 5px;">S.No</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Action(s)</th>
+            </tr>
+            <tr *ngFor="let x of categoryes;index as Index" style="margin-left: 5px;">
+                <td>{{Index+1}}</td>
+                <td>{{x.name}}</td>
+                <td>{{x.description}}</td>
+                <td>
+                    <button class="btnnn" style="background-color:blue;border-radius: 5px;border: none;"
+                        data-bs-toggle="modal" data-bs-target="#categoryModal"
+                        (click)=" editeCategory(x)">Edite</button>
+                    &nbsp;
+                    <button class="btnnn" style="background-color:solid red;border-radius: 5px;border: none;"
+                        (click)="deleteCategory(x.id)">
+                        delete</button>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="categoryModal" tabindex="-1" aria-labelledby="categoryModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="categoryModalLabel">{{ modelHeader}}</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" [(ngModel)]="category.name" name="name" id="name" class="form-control"
+                                placeholder="Name">
+                        </div>
+                        <div class="mb-3">
+                            <textarea [(ngModel)]="category.description" name="description" id="" cols="60" rows="4"
+                                class="form-control" placeholder="Enter Discription"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button (click)=" saveCategory()" data-bs-target="#productModal" data-bs-toggle="model"
+                        type="button" class="btn btn-primary" data-bs-dismiss="modal">Save
+                        changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
